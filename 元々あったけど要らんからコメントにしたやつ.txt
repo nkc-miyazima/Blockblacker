@@ -1,0 +1,66 @@
+//元々あったけど要らんからコメントにしたのは適当に外に出しておく(消すかも)
+
+//スクリプト系
+
+// アイテムは現状ブロック崩しには使わないので一旦コメントアウトしておく
+//itemSize_ = 30;
+//itemX_ = static_cast<float>(rand() % (Constants::SCREEN_WIDTH - itemSize_));
+//itemY_ = static_cast<float>(rand() % (Constants::SCREEN_HEIGHT - itemSize_));
+//itemActive_ = true;
+// 障害物をランダム配置（プレイヤー初期位置から200px以上離す）
+//obstacleSize_ = 60;
+//do
+//{
+//    obstacleX_ = static_cast<float>(rand() % (Constants::SCREEN_WIDTH - obstacleSize_));
+//    obstacleY_ = static_cast<float>(rand() % (Constants::SCREEN_HEIGHT - obstacleSize_));
+//    const float diffX = obstacleX_ - playerX_;
+//    const float diffY = obstacleY_ - playerY_;
+//    if (diffX * diffX + diffY * diffY >= 200.0f * 200.0f)
+//    {
+//        break;
+//    }
+//} while (true);
+// TODO: アイテムの数を増やして配列で管理してみよう
+// TODO: 障害物に当たったらスコアを減らすなど、ルールを追加してみよう
+    // アイテムと重なったら取得成功
+    // いったん非表示にしてスコアを増やし、そのあと新しい場所に再配置
+    //if (itemActive_ && Collision2D::SquareToSquare(playerX_, playerY_, playerSize_, itemX_, itemY_, itemSize_))
+    //{
+    //    itemActive_ = false;
+    //    score_ += 1;
+    //    itemX_ = static_cast<float>(rand() % (Constants::SCREEN_WIDTH - itemSize_));
+    //    itemY_ = static_cast<float>(rand() % (Constants::SCREEN_HEIGHT - itemSize_));
+    //    itemActive_ = true;
+    //}
+    //残機処理(下端通過)。ただシステムの変化上もう使わないかも
+    //if (ballY_ > static_cast<float>(Constants::SCREEN_HEIGHT)) {
+    //    --lives_;
+    //    //ボールを中央に戻す
+    //    ballX_ = BALL_X;
+    //    ballY_ = BALL_Y;
+    //    ballSpeedX_ = BALL_SPPED_X;
+    //    ballSpeedY_ = BALL_SPPED_Y;
+    //}
+
+
+//Drow系
+
+ // 障害物は灰色の四角形として描画(障害物とアイテム関係は一旦いらぬ)
+    //DrawBox(
+    //    static_cast<int>(obstacleX_),
+    //    static_cast<int>(obstacleY_),
+    //    static_cast<int>(obstacleX_) + obstacleSize_,
+    //    static_cast<int>(obstacleY_) + obstacleSize_,
+    //    GetColor(128, 128, 128),
+    //    TRUE);
+    // アイテムが有効なときだけ、黄色の四角形を表示
+    //if (itemActive_)
+    //{
+    //    DrawBox(
+    //        static_cast<int>(itemX_),
+    //        static_cast<int>(itemY_),
+    //        static_cast<int>(itemX_) + itemSize_,
+    //        static_cast<int>(itemY_) + itemSize_,
+    //        GetColor(255, 255, 0),
+    //        TRUE);
+    //}
