@@ -10,8 +10,6 @@ static constexpr float PLAYER_Y = 650.0f;
 static constexpr float PLAYER_SPPED = 6.0f;
 /** @brief プレイヤーの大きさの定数 */
 static constexpr int PLAYER_SIZE = 50;
-/** @brief プレイヤーの初期ライフ数の定数 */
-static constexpr int INIT_LIVES = 3;
 
 class Player
 {

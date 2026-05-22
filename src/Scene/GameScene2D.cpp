@@ -1,10 +1,8 @@
 ﻿#include "GameScene2D.h"
-
 #include "../Input/InputManager.h"
 #include "../Collision/Collision2D.h"
 #include "../Common/Constants.h"
 #include "SceneManager.h"
-
 #include <algorithm>
 #include <cstdlib>
 #include <DxLib.h>
