@@ -47,6 +47,7 @@ GameScene2D::~GameScene2D() = default;
  */
 void GameScene2D::Update()
 {
+    //ボールが反射されたかどうかを知らせる変数
     bool reflected = ball_.Update();
     //インプット系を使うための定義
     InputManager& input = InputManager::GetInstance();
@@ -123,7 +124,10 @@ void GameScene2D::Update()
             blockmanager_.BreakBlock(i);
             ball_.ReflectFromBlock();
             score_ += BLOCK_SCORE;
-            if (plus > 0) energy_ += plus;
+            if (plus > 0) 
+            {
+                energy_ += plus;
+            }
             for (int k = 0; k < 15; k++)
             {
                 float bx = b[i].x + BLOCK_W / 2;
