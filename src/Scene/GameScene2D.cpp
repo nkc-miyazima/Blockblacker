@@ -17,13 +17,10 @@ void GameScene2D::Init()
 {
     //ライフとか色々
     score_ = 0;                 //スコア
-    lives_ = INIT_LIVES;        //ライフ
-    lastlives_ = 0;
     lastscore_ = 0;
     isGameOver_ = false;        //ゲームオーバーフラグ
     blockrestime_ = 0;
-    timer_ = 60;
-    time_ = 0;
+    energy_ = 1000;
     paddle_.Init();
     blockmanager_.Init(blockrestime_);
 }
@@ -110,9 +107,9 @@ void GameScene2D::Update()
         ball_.ReflectFromPlayer(player_);
         if (playerInvincibletime_ == 0)
         {
-            if (lives_ > 0) 
+            if (energy_ > 0)
             {
-                lives_--;
+                energy_ -= 300;
             }
         }
         playerInvincibletime_ = 15;     //一度プレイヤーがボールに当たってから15フレームは無敵扱い
@@ -124,11 +121,11 @@ void GameScene2D::Update()
         if (!b[i].active) { continue; }
         if (Collision2D::RectToRect(ball_.GetX(), ball_.GetY(), ball_.GetSize(), ball_.GetSize(), b[i].x, b[i].y, BLOCK_W, BLOCK_H))
         {
-            float plus = 2.0f - blockrestime_ * 0.5f;
+            int plus = 200 - blockrestime_ * 40;
             blockmanager_.BreakBlock(i);
             ball_.ReflectFromBlock();
             score_ += BLOCK_SCORE;
-            if (plus > 0) timer_ += plus;
+            if (plus > 0) energy_ += plus;
             for (int k = 0; k < 15; k++)
             {
                 float bx = b[i].x + BLOCK_W / 2;
@@ -180,14 +177,16 @@ void GameScene2D::Update()
         blockmanager_.Init(blockrestime_);
     }
 
-    //タイマー
-    if (timer_ > 0)
+    //エネルギー減少
+    if (energy_ > 0)
     {
-        time_++;
-        if (time_ >= 60)
+        if (paddle_.Getpaddlestate_() == Paddle::Drawing) 
         {
-            timer_--;
-            time_ = 0;
+            energy_--;
+        }
+        else 
+        {
+            energy_ -= 0.5f;
         }
         if (playerInvincibletime_ > 0) 
         {
@@ -196,9 +195,8 @@ void GameScene2D::Update()
     }
 
     //もしライフがなくなったら
-    if (lives_ <= 0 || timer_ <= 0) 
+    if (energy_ <= 0)
     {
-        sceneManager_->lastLives = lives_;
         sceneManager_->lastScore = score_;
         isGameOver_ = true;     //ゲームオーバー表示に進む
     }
@@ -258,10 +256,8 @@ void GameScene2D::Draw()
     //UI表示
     //スコア
     DrawFormatString(Constants::SCREEN_WIDTH - 200, 10,GetColor(255, 255, 255),"SCORE: %d", score_);
-    //ライフ
-    DrawFormatString(Constants::SCREEN_WIDTH - 200, 40,GetColor(255, 80, 80),"LIVES: %d", lives_);
-    //タイム
-    DrawFormatString(Constants::SCREEN_WIDTH - 400, 40,GetColor(255, 255, 0),"TIMES: %.0f", timer_);
+    //エネルギー
+    DrawFormatString(Constants::SCREEN_WIDTH - 400, 10,GetColor(255, 255, 0),"ENERGY: %.0f", energy_);
 
     // 次のシーンへの案内を表示
     DrawString(10, 40, "Press ENTER to resilt Scene", GetColor(255, 255, 0));

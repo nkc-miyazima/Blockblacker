@@ -19,7 +19,4 @@ public:
 
 private:
     int Score;
-    int PlayerLive;
-    int LifeBonus;
-    int FinalScore;
 };

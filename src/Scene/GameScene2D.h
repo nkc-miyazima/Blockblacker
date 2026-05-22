@@ -56,30 +56,27 @@ public:
     void Draw() override;
 
     int GetScore() { return lastscore_; }
-    int GetLives() { return lastlives_; }
     int GetBrestime() { return blockrestime_; }
 
 private:
     /** @brief スコアを管理する変数 */
     int score_ = 0;
 
+    /** @brief 最終スコアを管理してリザルトに伝える変数 */
+    int lastscore_;
+
+    /** @brief ブロックが全消しされて復活した回数をカウントする変数 */
+    int blockrestime_;
+
     /** @brief プレイヤーのライフが0になったらtrueになる */
     bool isGameOver_ = false;
 
-    /** @brief プレイヤーの残りライフ数を管理する変数 */
-    int lives_ = INIT_LIVES;
+    /** @brief エネルギー*/
+    float energy_;
 
-    /** @brief 残り時間*/
-    float timer_ = 60;
-
-    /** @brief フレームカウント*/
-    int time_ = 0;
-
-    /** @brief プレイヤーがダメージを受けて無敵状態になる時の無敵時間の残り時間*/
+    /** @brief プレイヤーがボールと接触した時にめり込んだりして連続ヒットを起こすのを防止する為の無敵時間の残り時間*/
     int playerInvincibletime_ = 0;
 
+    /** @brief 背景の読み込み*/
     int bg = LoadGraph("assets/png/HAI.png");
-    int lastlives_;
-    int lastscore_;
-    int blockrestime_;
 };
