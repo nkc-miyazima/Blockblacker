@@ -75,12 +75,6 @@
     <ClCompile Include="src\Scene\GameScene2D.cpp">
       <Filter>src\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="src\Scene\GameScene3D.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\SpaceScene.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="src\Scene\ResultScene.cpp">
       <Filter>src\Scene</Filter>
     </ClCompile>
@@ -159,12 +153,6 @@
       <Filter>src\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\Scene\GameScene2D.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\GameScene3D.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\SpaceScene.h">
       <Filter>src\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\Scene\ResultScene.h">

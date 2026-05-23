@@ -91,12 +91,10 @@
     <ClCompile Include="src\Scene\BaseScene.cpp" />
     <ClCompile Include="src\Scene\Block.cpp" />
     <ClCompile Include="src\Scene\GameScene2D.cpp" />
-    <ClCompile Include="src\Scene\GameScene3D.cpp" />
     <ClCompile Include="src\Scene\Paddle.cpp" />
     <ClCompile Include="src\Scene\ParticleManager.cpp" />
     <ClCompile Include="src\Scene\Player.cpp" />
     <ClCompile Include="src\Scene\Skill.cpp" />
-    <ClCompile Include="src\Scene\SpaceScene.cpp" />
     <ClCompile Include="src\Scene\ResultScene.cpp" />
     <ClCompile Include="src\Scene\SceneManager.cpp" />
     <ClCompile Include="src\Scene\TitleScene.cpp" />
@@ -121,14 +119,12 @@
     <ClInclude Include="src\Scene\BaseScene.h" />
     <ClInclude Include="src\Scene\Block.h" />
     <ClInclude Include="src\Scene\GameScene2D.h" />
-    <ClInclude Include="src\Scene\GameScene3D.h" />
     <ClInclude Include="src\Scene\Paddle.h" />
     <ClInclude Include="src\Scene\ParticleManager.h" />
     <ClInclude Include="src\Scene\Player.h" />
     <ClInclude Include="src\Scene\ResultScene.h" />
     <ClInclude Include="src\Scene\SceneManager.h" />
     <ClInclude Include="src\Scene\Skill.h" />
-    <ClInclude Include="src\Scene\SpaceScene.h" />
     <ClInclude Include="src\Scene\TitleScene.h" />
     <ClInclude Include="src\ShadowMap\ShadowMap.h" />
     <ClInclude Include="src\Sprite\Sprite.h" />

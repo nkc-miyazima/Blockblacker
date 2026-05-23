@@ -17,19 +17,18 @@
 class GameScene2D : public BaseScene
 {
 public:
-    Player player_;
-    Ball ball_;
-    BlockManager blockmanager_;
-    Paddle paddle_;
-    ParticleManager particle_;
-    BallTrailManager balltrail_;
+    enum class GameMode {
+        Basic,
+        Endless,
+        // 後でちょっと追加するかも
+    };
 
     /**
      * @brief 2Dゲームシーンを生成
      * @param sceneManager シーン遷移を依頼する先のマネージャー
      * @return なし。
      */
-    explicit GameScene2D(SceneManager* sceneManager);
+    explicit GameScene2D(SceneManager* sceneManager, GameMode mode);
 
     /**
      * @brief 2Dゲームシーンを破棄
@@ -59,6 +58,14 @@ public:
     int GetBrestime() { return blockrestime_; }
 
 private:
+    GameMode mode_;
+    Player player_;
+    Ball ball_;
+    BlockManager blockmanager_;
+    Paddle paddle_;
+    ParticleManager particle_;
+    BallTrailManager balltrail_;
+
     /** @brief スコアを管理する変数 */
     int score_ = 0;
 
@@ -79,4 +86,6 @@ private:
 
     /** @brief 背景の読み込み*/
     int bg = LoadGraph("assets/png/HAI.png");
+
+    int life_ = 3;
 };

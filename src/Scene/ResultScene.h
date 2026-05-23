@@ -6,7 +6,6 @@
 class ResultScene : public BaseScene
 {
 public:
-    GameScene2D game2d_;
     explicit ResultScene(SceneManager* sceneManager);
 
     ~ResultScene() override;

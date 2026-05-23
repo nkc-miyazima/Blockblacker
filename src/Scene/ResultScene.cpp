@@ -4,8 +4,7 @@
 #include <DxLib.h>
 
 ResultScene::ResultScene(SceneManager* sceneManager)
-    : BaseScene(sceneManager),
-    game2d_(sceneManager)
+    : BaseScene(sceneManager)
 {
 }
 

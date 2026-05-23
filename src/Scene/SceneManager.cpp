@@ -1,9 +1,6 @@
 ﻿#include "SceneManager.h"
-
 #include "BaseScene.h"
 #include "GameScene2D.h"
-#include "GameScene3D.h"
-#include "SpaceScene.h"
 #include "ResultScene.h"
 #include "TitleScene.h"
 
@@ -18,14 +15,11 @@ void SceneManager::ChangeScene(const SceneID sceneID)
     case SceneID::Title:
         currentScene_ = std::make_unique<TitleScene>(this);
         break;
-    case SceneID::Game2D:
-        currentScene_ = std::make_unique<GameScene2D>(this);
+    case SceneID::Game2D_Basic:
+        currentScene_ = std::make_unique<GameScene2D>(this, GameScene2D::GameMode::Basic);
         break;
-    case SceneID::Game3D:
-        currentScene_ = std::make_unique<GameScene3D>(this);
-        break;
-    case SceneID::Space:
-        currentScene_ = std::make_unique<SpaceScene>(this);
+    case SceneID::Game2D_Endless:
+        currentScene_ = std::make_unique<GameScene2D>(this, GameScene2D::GameMode::Endless);
         break;
     case SceneID::Result:
         currentScene_ = std::make_unique<ResultScene>(this);

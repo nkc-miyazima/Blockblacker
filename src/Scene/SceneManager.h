@@ -11,12 +11,10 @@ enum class SceneID
 {
     /** @brief タイトルシーン */
     Title,
-    /** @brief 2Dゲーム本編シーン */
-    Game2D,
-    /** @brief 3Dゲーム本編シーン */
-    Game3D,
-    /** @brief スペースシューターシーン */
-    Space,
+    /** @brief 2Dゲーム本編シーン    通常モード */
+    Game2D_Basic,
+    /** @brief 2Dゲーム本編シーン 　エンドレスモード*/
+    Game2D_Endless,
     /** @brief リザルトシーン */
     Result
 };
