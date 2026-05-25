@@ -13,7 +13,7 @@ static constexpr float BALL_SPPED_X = 5.0f;
 /** @brief ボールの初期Y方向への速度の定数 */
 static constexpr float BALL_SPPED_Y = 3.0f;
 /** @brief ボールの速度上限の定数 */
-static constexpr float BALL_MAX_SPEED = 10.0f;
+static constexpr float BALL_MAX_SPEED = 20.0f;
 /** @brief ボールの直径の定数 */
 static constexpr int BALL_SIZE = 20;
 

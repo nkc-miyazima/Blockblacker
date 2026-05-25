@@ -19,6 +19,8 @@ void GameScene2D::Init()
     isGameOver_ = false;        //ゲームオーバーフラグ
     blockrestime_ = 0;
     energy_ = 1000;
+    se_break_ = LoadSoundMem("assets/se/ガラスが割れる3.mp3");
+    se_paddle= LoadSoundMem("assets/se/パドル.mp3");
     paddle_.Init();
     blockmanager_.Init(blockrestime_);
 }
@@ -68,6 +70,7 @@ void GameScene2D::Update()
         float cx = (s.x + e.x) * 0.5f;
         float cy = (s.y + e.y) * 0.5f;
         particle_.SpawnPaddleEffect(cx, cy);
+        PlaySoundMem(se_paddle, DX_PLAYTYPE_BACK);
     }
 
     //パドルを書いている間は動きが遅くなる
@@ -111,7 +114,7 @@ void GameScene2D::Update()
             {
                 if (energy_ > 0)
                 {
-                    energy_ -= 300;
+                    energy_ *= 0.9;
                 }
             }
             else if (mode_ == GameMode::Endless) 
@@ -127,7 +130,8 @@ void GameScene2D::Update()
     }
 
     //Collsion2Dを使ったボールとブロックの当たり判定
-    for (int i = 0;i < BLOCK_COUNT;++i) {
+    for (int i = 0;i < BLOCK_COUNT;++i) 
+    {
         if (!b[i].active) { continue; }
         if (Collision2D::RectToRect(ball_.GetX(), ball_.GetY(), ball_.GetSize(), ball_.GetSize(), b[i].x, b[i].y, BLOCK_W, BLOCK_H))
         {
@@ -135,6 +139,7 @@ void GameScene2D::Update()
             blockmanager_.BreakBlock(i);
             ball_.ReflectFromBlock();
             score_ += BLOCK_SCORE;
+            PlaySoundMem(se_break_, DX_PLAYTYPE_BACK);
             if (mode_ == GameMode::Basic && plus > 0)
             {
                 energy_ += plus;

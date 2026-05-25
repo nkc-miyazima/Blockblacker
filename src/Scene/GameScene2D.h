@@ -1,10 +1,10 @@
 ﻿#pragma once
 #include "BaseScene.h"
-#include "Player.h"
-#include "Ball.h"
-#include "Paddle.h"
+#include "../GameObject/Player.h"
+#include "../GameObject/ball.h"
+#include "../GameObject/Paddle.h"
 #include "ParticleManager.h"
-#include "BallTrailManager.h"
+#include "../GameObject/BallTrailManager.h"
 #include <DxLib.h>
 #include <vector>
 
@@ -87,5 +87,12 @@ private:
     /** @brief 背景の読み込み*/
     int bg = LoadGraph("assets/png/HAI.png");
 
+    /** @brief エンドレスモード用のライフ*/
     int life_ = 3;
+
+    /** @brief ブロックが壊れた時の音*/
+    int se_break_ = -1;
+
+    /** @brief パドルを描画する時の音*/
+    int se_paddle = -1;
 };

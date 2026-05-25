@@ -40,6 +40,15 @@
     <Filter Include="assets">
       <UniqueIdentifier>{A7777777-7777-7777-7777-777777777777}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\GameObject">
+      <UniqueIdentifier>{0c990ae1-d60b-43cc-829a-6089abe7ac9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameObject\.h">
+      <UniqueIdentifier>{0112548d-e7d9-4a06-a0ea-4273db4b4e5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameObject\.cpp">
+      <UniqueIdentifier>{66fd4794-7e6c-41be-8835-57edd8a93fa4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -90,26 +99,26 @@
     <ClCompile Include="src\Sprite\Sprite.cpp">
       <Filter>src\Sprite</Filter>
     </ClCompile>
-    <ClCompile Include="src\Scene\Player.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\Ball.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\Block.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\Paddle.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="src\Scene\Skill.cpp">
       <Filter>src\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\Scene\ParticleManager.cpp">
       <Filter>src\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="src\Scene\BallTrailManager.cpp">
-      <Filter>src\Scene</Filter>
+    <ClCompile Include="src\GameObject\Ball.cpp">
+      <Filter>src\GameObject\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\BallTrailManager.cpp">
+      <Filter>src\GameObject\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Block.cpp">
+      <Filter>src\GameObject\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Paddle.cpp">
+      <Filter>src\GameObject\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Player.cpp">
+      <Filter>src\GameObject\.cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -170,26 +179,26 @@
     <ClInclude Include="src\Sprite\Sprite.h">
       <Filter>src\Sprite</Filter>
     </ClInclude>
-    <ClInclude Include="src\Scene\Player.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\Ball.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\Block.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\Paddle.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="src\Scene\Skill.h">
       <Filter>src\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\Scene\ParticleManager.h">
       <Filter>src\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="src\Scene\BallTrailManager.h">
-      <Filter>src\Scene</Filter>
+    <ClInclude Include="src\GameObject\Ball.h">
+      <Filter>src\GameObject\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\BallTrailManager.h">
+      <Filter>src\GameObject\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Block.h">
+      <Filter>src\GameObject\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Paddle.h">
+      <Filter>src\GameObject\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Player.h">
+      <Filter>src\GameObject\.h</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
