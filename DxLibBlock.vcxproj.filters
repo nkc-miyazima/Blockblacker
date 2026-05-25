@@ -49,6 +49,12 @@
     <Filter Include="src\GameObject\.cpp">
       <UniqueIdentifier>{66fd4794-7e6c-41be-8835-57edd8a93fa4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Scene\.cpp">
+      <UniqueIdentifier>{09b11e64-a258-43fc-a3c5-f7081e18ab24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Scene\.h">
+      <UniqueIdentifier>{8110c2f3-328b-47f1-867f-c69b39d7afd3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -78,32 +84,11 @@
     <ClCompile Include="src\Primitive3D\Primitive3D.cpp">
       <Filter>src\Primitive3D</Filter>
     </ClCompile>
-    <ClCompile Include="src\Scene\BaseScene.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\GameScene2D.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\ResultScene.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\SceneManager.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\TitleScene.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="src\ShadowMap\ShadowMap.cpp">
       <Filter>src\ShadowMap</Filter>
     </ClCompile>
     <ClCompile Include="src\Sprite\Sprite.cpp">
       <Filter>src\Sprite</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\Skill.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\ParticleManager.cpp">
-      <Filter>src\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\GameObject\Ball.cpp">
       <Filter>src\GameObject\.cpp</Filter>
@@ -119,6 +104,30 @@
     </ClCompile>
     <ClCompile Include="src\GameObject\Player.cpp">
       <Filter>src\GameObject\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\BaseScene.cpp">
+      <Filter>src\Scene\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\GameScene2D.cpp">
+      <Filter>src\Scene\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\ParticleManager.cpp">
+      <Filter>src\Scene\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\ResultScene.cpp">
+      <Filter>src\Scene\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\SceneManager.cpp">
+      <Filter>src\Scene\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\Skill.cpp">
+      <Filter>src\Scene\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\TitleScene.cpp">
+      <Filter>src\Scene\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\SoundManager.cpp">
+      <Filter>src\Scene\.cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -158,32 +167,11 @@
     <ClInclude Include="src\Primitive3D\Primitive3D.h">
       <Filter>src\Primitive3D</Filter>
     </ClInclude>
-    <ClInclude Include="src\Scene\BaseScene.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\GameScene2D.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\ResultScene.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\SceneManager.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\TitleScene.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="src\ShadowMap\ShadowMap.h">
       <Filter>src\ShadowMap</Filter>
     </ClInclude>
     <ClInclude Include="src\Sprite\Sprite.h">
       <Filter>src\Sprite</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\Skill.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\ParticleManager.h">
-      <Filter>src\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\GameObject\Ball.h">
       <Filter>src\GameObject\.h</Filter>
@@ -199,6 +187,30 @@
     </ClInclude>
     <ClInclude Include="src\GameObject\Player.h">
       <Filter>src\GameObject\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\BaseScene.h">
+      <Filter>src\Scene\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\GameScene2D.h">
+      <Filter>src\Scene\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\ParticleManager.h">
+      <Filter>src\Scene\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\ResultScene.h">
+      <Filter>src\Scene\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\SceneManager.h">
+      <Filter>src\Scene\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\Skill.h">
+      <Filter>src\Scene\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\TitleScene.h">
+      <Filter>src\Scene\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\SoundManager.h">
+      <Filter>src\Scene\.h</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

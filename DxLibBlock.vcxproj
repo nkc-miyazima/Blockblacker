@@ -97,6 +97,7 @@
     <ClCompile Include="src\Scene\Skill.cpp" />
     <ClCompile Include="src\Scene\ResultScene.cpp" />
     <ClCompile Include="src\Scene\SceneManager.cpp" />
+    <ClCompile Include="src\Scene\SoundManager.cpp" />
     <ClCompile Include="src\Scene\TitleScene.cpp" />
     <ClCompile Include="src\ShadowMap\ShadowMap.cpp" />
     <ClCompile Include="src\Sprite\Sprite.cpp" />
@@ -125,6 +126,7 @@
     <ClInclude Include="src\Scene\ResultScene.h" />
     <ClInclude Include="src\Scene\SceneManager.h" />
     <ClInclude Include="src\Scene\Skill.h" />
+    <ClInclude Include="src\Scene\SoundManager.h" />
     <ClInclude Include="src\Scene\TitleScene.h" />
     <ClInclude Include="src\ShadowMap\ShadowMap.h" />
     <ClInclude Include="src\Sprite\Sprite.h" />

@@ -1,4 +1,5 @@
 ﻿#include "GameScene2D.h"
+#include "SoundManager.h"
 #include "../Input/InputManager.h"
 #include "../Collision/Collision2D.h"
 #include "../Common/Constants.h"
@@ -19,8 +20,6 @@ void GameScene2D::Init()
     isGameOver_ = false;        //ゲームオーバーフラグ
     blockrestime_ = 0;
     energy_ = 1000;
-    se_break_ = LoadSoundMem("assets/se/ガラスが割れる3.mp3");
-    se_paddle= LoadSoundMem("assets/se/パドル.mp3");
     paddle_.Init();
     blockmanager_.Init(blockrestime_);
 }
@@ -70,7 +69,7 @@ void GameScene2D::Update()
         float cx = (s.x + e.x) * 0.5f;
         float cy = (s.y + e.y) * 0.5f;
         particle_.SpawnPaddleEffect(cx, cy);
-        PlaySoundMem(se_paddle, DX_PLAYTYPE_BACK);
+        SoundManager::GetInstance().PlaySE(SoundManager::SE_PADDLE);
     }
 
     //パドルを書いている間は動きが遅くなる
@@ -139,7 +138,7 @@ void GameScene2D::Update()
             blockmanager_.BreakBlock(i);
             ball_.ReflectFromBlock();
             score_ += BLOCK_SCORE;
-            PlaySoundMem(se_break_, DX_PLAYTYPE_BACK);
+            SoundManager::GetInstance().PlaySE(SoundManager::SE_BREAK);
             if (mode_ == GameMode::Basic && plus > 0)
             {
                 energy_ += plus;
