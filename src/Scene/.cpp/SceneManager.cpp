@@ -1,8 +1,8 @@
-﻿#include "SceneManager.h"
-#include "BaseScene.h"
-#include "GameScene2D.h"
-#include "ResultScene.h"
-#include "TitleScene.h"
+﻿#include "../.h/SceneManager.h"
+#include "../.h/BaseScene.h"
+#include "../.h/GameScene2D.h"
+#include "../.h/ResultScene.h"
+#include "../.h/TitleScene.h"
 
 SceneManager::SceneManager() = default;
 

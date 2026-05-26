@@ -1,4 +1,4 @@
-#include "Paddle.h"
+#include "../.h/Paddle.h"
 #include <DxLib.h>
 
 void Paddle::Init()

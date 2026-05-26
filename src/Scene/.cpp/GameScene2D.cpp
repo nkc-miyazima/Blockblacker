@@ -1,9 +1,9 @@
-﻿#include "GameScene2D.h"
-#include "SoundManager.h"
+﻿#include "../.h/GameScene2D.h"
+#include "../.h/SoundManager.h"
 #include "../Input/InputManager.h"
 #include "../Collision/Collision2D.h"
 #include "../Common/Constants.h"
-#include "SceneManager.h"
+#include "../.h/SceneManager.h"
 #include <algorithm>
 #include <cstdlib>
 #include <DxLib.h>
@@ -19,7 +19,6 @@ void GameScene2D::Init()
     lastscore_ = 0;
     isGameOver_ = false;        //ゲームオーバーフラグ
     blockrestime_ = 0;
-    energy_ = 1000;
     paddle_.Init();
     blockmanager_.Init(blockrestime_);
 }
@@ -91,7 +90,6 @@ void GameScene2D::Update()
         {
             continue;
         }
-
         if (Collision2D::RectToRect(player_.GetX(), player_.GetY(), player_.GetSize(), player_.GetSize(),b[i].x, b[i].y, BLOCK_W, BLOCK_H))
         {
             // めり込んだので押し戻す
@@ -109,19 +107,9 @@ void GameScene2D::Update()
         ball_.ReflectFromPlayer(player_);
         if (playerInvincibletime_ == 0)
         {
-            if (mode_ == GameMode::Basic)
+            if (life_ > 0) 
             {
-                if (energy_ > 0)
-                {
-                    energy_ *= 0.9;
-                }
-            }
-            else if (mode_ == GameMode::Endless) 
-            {
-                if (life_ > 0) 
-                {
-                    life_--;
-                }
+                life_--;
             }
         }
         playerInvincibletime_ = 15;     //一度プレイヤーがボールに当たってから15フレームは無敵扱い
@@ -134,24 +122,24 @@ void GameScene2D::Update()
         if (!b[i].active) { continue; }
         if (Collision2D::RectToRect(ball_.GetX(), ball_.GetY(), ball_.GetSize(), ball_.GetSize(), b[i].x, b[i].y, BLOCK_W, BLOCK_H))
         {
-            int plus = 200 - blockrestime_ * 40;
-            blockmanager_.BreakBlock(i);
+            //ボールがブロックに当たった時ブロックに１ダメージを与え、壊れたならこれがtureになる
+            bool destroyed = blockmanager_.DamageBlock(i, 1);
+            if (destroyed)
+            {
+                blockmanager_.BreakBlock(i);
+                score_ += BLOCK_SCORE;
+                SoundManager::GetInstance().PlaySE(SoundManager::SE_BREAK);
+                for (int k = 0; k < 15; k++)
+                {
+                    float bx = b[i].x + BLOCK_W / 2;
+                    float by = b[i].y + BLOCK_H / 2;
+                    float vx = (rand() % 200 - 100) / 50.0f;
+                    float vy = (rand() % 200 - 100) / 50.0f;
+                    particle_.Add(bx, by, vx, vy, 30, GetColor(b[i].r, b[i].g, b[i].b));
+                }
+            }
             ball_.ReflectFromBlock();
-            score_ += BLOCK_SCORE;
-            SoundManager::GetInstance().PlaySE(SoundManager::SE_BREAK);
-            if (mode_ == GameMode::Basic && plus > 0)
-            {
-                energy_ += plus;
-            }
-            for (int k = 0; k < 15; k++)
-            {
-                float bx = b[i].x + BLOCK_W / 2;
-                float by = b[i].y + BLOCK_H / 2;
-                float vx = (rand() % 200 - 100) / 50.0f;
-                float vy = (rand() % 200 - 100) / 50.0f;
-                particle_.Add(bx, by, vx, vy, 30, GetColor(b[i].r, b[i].g, b[i].b));
-            }
-            reflected = true;
+            reflected = true;       //破壊の有無関係なしにボールの反射とそのエフェクトはやる
         }
     }
     
@@ -194,25 +182,14 @@ void GameScene2D::Update()
         blockmanager_.Init(blockrestime_);
     }
 
-    //エネルギー減少
-    if (mode_ == GameMode::Basic && energy_ > 0)
-    {
-        if (paddle_.Getpaddlestate_() == Paddle::Drawing) 
-        {
-            energy_--;
-        }
-        else 
-        {
-            energy_ -= 0.5f;
-        }
-    }
+    //無敵時間関係
     if (playerInvincibletime_ > 0)
     {
         playerInvincibletime_--;
     }
 
     //もしライフがなくなったら
-    if (energy_ <= 0 || life_ <= 0)
+    if (life_ <= 0)
     {
         sceneManager_->lastScore = score_;
         isGameOver_ = true;     //ゲームオーバー表示に進む
@@ -274,15 +251,7 @@ void GameScene2D::Draw()
     //スコア
     DrawFormatString(Constants::SCREEN_WIDTH - 200, 10,GetColor(255, 255, 255),"SCORE: %d", score_);
     //エネルギーとか
-    if (mode_ == GameMode::Basic) 
-    {
-        DrawFormatString(10, 10, GetColor(255, 255, 255), "ENERGY: %.0f", energy_);
-    }
-    else if (mode_ == GameMode::Endless) 
-    {
-        DrawFormatString(10, 10, GetColor(255, 255, 255), "LIFE: %d", life_);
-    }
-
+    DrawFormatString(10, 10, GetColor(255, 255, 255), "LIFE: %d", life_);
     // 次のシーンへの案内を表示
     DrawString(10, 40, "Press ENTER to resilt Scene", GetColor(255, 255, 0));
 }

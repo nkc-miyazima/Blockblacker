@@ -1,4 +1,4 @@
-#include "SoundManager.h"
+#include "../.h/SoundManager.h"
 
 SoundManager& SoundManager::GetInstance()
 {

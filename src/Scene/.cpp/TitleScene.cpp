@@ -1,6 +1,6 @@
-﻿#include "TitleScene.h"
+﻿#include "../.h/TitleScene.h"
 #include "../Input/InputManager.h"
-#include "SceneManager.h"
+#include "../.h/SceneManager.h"
 #include <DxLib.h>
 
 TitleScene::TitleScene(SceneManager* sceneManager)

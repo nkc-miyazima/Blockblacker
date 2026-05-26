@@ -1,10 +1,10 @@
 ﻿#pragma once
 #include "BaseScene.h"
-#include "../GameObject/Player.h"
-#include "../GameObject/ball.h"
-#include "../GameObject/Paddle.h"
+#include "../GameObject/.h/Player.h"
+#include "../GameObject/.h/ball.h"
+#include "../GameObject/.h/Paddle.h"
 #include "ParticleManager.h"
-#include "../GameObject/BallTrailManager.h"
+#include "../GameObject/.h/BallTrailManager.h"
 #include <DxLib.h>
 #include <vector>
 
@@ -79,7 +79,7 @@ private:
     bool isGameOver_ = false;
 
     /** @brief エネルギー*/
-    float energy_;
+    //float energy_;
 
     /** @brief プレイヤーがボールと接触した時にめり込んだりして連続ヒットを起こすのを防止する為の無敵時間の残り時間*/
     int playerInvincibletime_ = 0;
@@ -89,10 +89,4 @@ private:
 
     /** @brief エンドレスモード用のライフ*/
     int life_ = 3;
-
-    /** @brief ブロックが壊れた時の音*/
-    int se_break_ = -1;
-
-    /** @brief パドルを描画する時の音*/
-    int se_paddle = -1;
 };

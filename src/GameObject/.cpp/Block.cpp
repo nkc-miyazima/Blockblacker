@@ -1,4 +1,4 @@
-#include "Block.h"
+#include "../.h/Block.h"
 #include <DxLib.h>
 
 void BlockManager::Init(int res)
@@ -10,6 +10,12 @@ void BlockManager::Init(int res)
         {
             int r = 70 + res * 5;
             int i = row * BLOCK_COLS + col;
+            blocks_[i].maxhp = 1 + res / 3;
+            if (blocks_[i].maxhp > 10)
+            {
+                blocks_[i].maxhp = 9;       //ブロックの最大耐久値は9
+            }
+            blocks_[i].hp = blocks_[i].maxhp;
             blocks_[i].x = BLOCK_START_X + static_cast<float>(col * (BLOCK_W + BLOCK_GAP_X));
             blocks_[i].y = BLOCK_START_Y + static_cast<float>(row * (BLOCK_H + BLOCK_GAP_Y));
             if (r <= 95) 
@@ -22,6 +28,17 @@ void BlockManager::Init(int res)
             }
         }
     }
+}
+
+bool BlockManager::DamageBlock(int index, int damage)
+{
+    blocks_[index].hp -= damage;
+    if (blocks_[index].hp <= 0)
+    {
+        blocks_[index].active = false;
+        return true; // 壊れた
+    }
+    return false; // まだ生きてる
 }
 
 bool BlockManager::IsAllCleared() const
@@ -41,31 +58,49 @@ void BlockManager::Draw()
     //activeなブロックだけ描画
     for (int i = 0;i < BLOCK_COUNT;++i) {
         if (!blocks_[i].active) { continue; }
-        //行番号を計算
-        int row = i / BLOCK_COLS;
-        switch (row)
+        switch (blocks_[i].hp)
         {
-        case 0:     //赤色になる
+        case 1:     //赤色になる
             blocks_[i].r = 255;
             blocks_[i].g = 0;
             blocks_[i].b = 0;
             break;
-        case 1:     //緑色になる
+        case 2:     //緑色になる
             blocks_[i].r = 0;
             blocks_[i].g = 255;
             blocks_[i].b = 0;
             break;
-        case 2:     //青色になる
+        case 3:     //青色になる
             blocks_[i].r = 0;
             blocks_[i].g = 0;
             blocks_[i].b = 255;
             break;
-        case 3:     //オレンジっぽくなる
+        case 4:     //オレンジっぽくなる
             blocks_[i].r = 245;
-            blocks_[i].g = 148;
-            blocks_[i].b = 11;
+            blocks_[i].g = 255;
+            blocks_[i].b = 0;
             break;
-        default:    //想定外の値が入ってくるなら一旦白色のブロックにする
+        case 5:
+            blocks_[i].r = 255;
+            blocks_[i].g = 0;
+            blocks_[i].b = 255;
+            break;
+        case 6:
+            blocks_[i].r = 0;
+            blocks_[i].g = 255;
+            blocks_[i].b = 255;
+            break;
+        case 7:
+            blocks_[i].r = 50;
+            blocks_[i].g = 50;
+            blocks_[i].b = 50;
+            break;
+        case 8:
+            blocks_[i].r = 150;
+            blocks_[i].g = 150;
+            blocks_[i].b = 150;
+            break;
+        case 9:
             blocks_[i].r = 255;
             blocks_[i].g = 255;
             blocks_[i].b = 255;

@@ -28,6 +28,7 @@ public:
     void Draw();
 
     bool IsAllCleared() const;
+    bool DamageBlock(int index, int damage);
 
     //ブロックの構造体
     struct Block
@@ -39,6 +40,8 @@ public:
         int r = 255;    //赤系
         int g = 255;    //緑系
         int b = 255;    //青系
+        int hp = 1;     //ブロックの残り耐久力(０以下になったらactive=falseになる)
+        int maxhp = 1;  //ブロックの最大耐久力(ブロックが全消しされた回数によって緩やかに上昇)
         /** @brief ブロックが壊れているかどうか　true:破壊済,false:未破壊 */
         bool active = false;
     };

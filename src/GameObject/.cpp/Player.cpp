@@ -1,5 +1,5 @@
-#include "Player.h"
-#include "Paddle.h"
+#include "../.h/Player.h"
+#include "../.h/Paddle.h"
 #include "InputManager.h"
 #include "Constants.h"
 #include <DxLib.h>

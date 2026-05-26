@@ -1,4 +1,4 @@
-#include "Ball.h"
+#include "../.h/ball.h"
 #include "Constants.h"
 #include <DxLib.h>
 #include <cmath>

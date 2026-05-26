@@ -90,43 +90,43 @@
     <ClCompile Include="src\Sprite\Sprite.cpp">
       <Filter>src\Sprite</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameObject\Ball.cpp">
+    <ClCompile Include="src\Scene\.cpp\ResultScene.cpp">
+      <Filter>src\Scene\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\.cpp\SceneManager.cpp">
+      <Filter>src\Scene\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\.cpp\Skill.cpp">
+      <Filter>src\Scene\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\.cpp\TitleScene.cpp">
+      <Filter>src\Scene\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\.cpp\BaseScene.cpp">
+      <Filter>src\Scene\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\.cpp\GameScene2D.cpp">
+      <Filter>src\Scene\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\.cpp\ParticleManager.cpp">
+      <Filter>src\Scene\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\.cpp\Ball.cpp">
       <Filter>src\GameObject\.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameObject\BallTrailManager.cpp">
+    <ClCompile Include="src\GameObject\.cpp\BallTrailManager.cpp">
       <Filter>src\GameObject\.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameObject\Block.cpp">
+    <ClCompile Include="src\GameObject\.cpp\Block.cpp">
       <Filter>src\GameObject\.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameObject\Paddle.cpp">
+    <ClCompile Include="src\GameObject\.cpp\Paddle.cpp">
       <Filter>src\GameObject\.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameObject\Player.cpp">
+    <ClCompile Include="src\GameObject\.cpp\Player.cpp">
       <Filter>src\GameObject\.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\Scene\BaseScene.cpp">
-      <Filter>src\Scene\.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\GameScene2D.cpp">
-      <Filter>src\Scene\.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\ParticleManager.cpp">
-      <Filter>src\Scene\.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\ResultScene.cpp">
-      <Filter>src\Scene\.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\SceneManager.cpp">
-      <Filter>src\Scene\.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\Skill.cpp">
-      <Filter>src\Scene\.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\TitleScene.cpp">
-      <Filter>src\Scene\.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\SoundManager.cpp">
+    <ClCompile Include="src\Scene\.cpp\SoundManager.cpp">
       <Filter>src\Scene\.cpp</Filter>
     </ClCompile>
   </ItemGroup>
@@ -173,43 +173,43 @@
     <ClInclude Include="src\Sprite\Sprite.h">
       <Filter>src\Sprite</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameObject\Ball.h">
+    <ClInclude Include="src\Scene\.h\BaseScene.h">
+      <Filter>src\Scene\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\.h\GameScene2D.h">
+      <Filter>src\Scene\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\.h\ParticleManager.h">
+      <Filter>src\Scene\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\.h\Skill.h">
+      <Filter>src\Scene\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\.h\SceneManager.h">
+      <Filter>src\Scene\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\.h\ResultScene.h">
+      <Filter>src\Scene\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\.h\TitleScene.h">
+      <Filter>src\Scene\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\.h\Ball.h">
       <Filter>src\GameObject\.h</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameObject\BallTrailManager.h">
+    <ClInclude Include="src\GameObject\.h\BallTrailManager.h">
       <Filter>src\GameObject\.h</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameObject\Block.h">
+    <ClInclude Include="src\GameObject\.h\Block.h">
       <Filter>src\GameObject\.h</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameObject\Paddle.h">
+    <ClInclude Include="src\GameObject\.h\Paddle.h">
       <Filter>src\GameObject\.h</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameObject\Player.h">
+    <ClInclude Include="src\GameObject\.h\Player.h">
       <Filter>src\GameObject\.h</Filter>
     </ClInclude>
-    <ClInclude Include="src\Scene\BaseScene.h">
-      <Filter>src\Scene\.h</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\GameScene2D.h">
-      <Filter>src\Scene\.h</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\ParticleManager.h">
-      <Filter>src\Scene\.h</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\ResultScene.h">
-      <Filter>src\Scene\.h</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\SceneManager.h">
-      <Filter>src\Scene\.h</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\Skill.h">
-      <Filter>src\Scene\.h</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\TitleScene.h">
-      <Filter>src\Scene\.h</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\SoundManager.h">
+    <ClInclude Include="src\Scene\.h\SoundManager.h">
       <Filter>src\Scene\.h</Filter>
     </ClInclude>
   </ItemGroup>
